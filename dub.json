@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "Léo Labruyère"
+  ],
+  "copyright": "Copyright © 2020, Léo Labruyère",
+  "description": "A fixed point number D library",
+  "name": "fixedpoint",
+  "configurations": [
+    {
+      "name": "static",
+      "targetType": "staticLibrary"
+    },
+    {
+      "name": "dynamic",
+      "targetType": "dynamicLibrary"
+    }
+  ]
+}
