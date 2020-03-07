@@ -123,20 +123,6 @@ public:
     return opBinary!(op)(res);
   }
 
-  /* Opérateur unaire (post et pre) d'addition et de soustraction */
-  typeof(this) opUnary(string op)() {
-    static if (op == "++") {
-      this = this + 1;
-    }
-    else static if (op == "--") {
-      this = this - 1;
-    }
-    else {
-      static assert(false,  op ~ " not implemented for " ~ typeof(this).stringof);
-    }
-    return this;
-  }
-
   /* Opérateur d'égalité */
   bool opEquals(const(typeof(this)) rhs) const {
     return this.internal == rhs.internal;
@@ -280,7 +266,7 @@ unittest {
   fixed test2 = 68.2;
   writefln("\ttest2 == %s", test2);
   assert(test2 == 68.1875);
-  writeln("\t\\\\precision problem expected, a 4 bits fractionnal part can't stock 0.2, 0.1875 is the closest thing it can handle");
+  writeln("\t\\\\Problème de précision attendu, une partie décimal sur 4 bits ne peux pas stocker 0.2, 0.1875 est la chose la plus proche qu'elle puisse gérer");
 }
 
 unittest {
